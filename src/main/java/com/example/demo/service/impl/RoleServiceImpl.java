@@ -15,14 +15,17 @@ import java.util.Optional;
 public class RoleServiceImpl implements IRoleService {
     @Autowired
     IRoleRepository roleRepository;
+
     @Override
     public Optional<Role> findByName(RoleName name) {
         return roleRepository.findByName(name);
     }
+
     @Override
     public Iterable<Role> findAll() {
         return roleRepository.findAll();
     }
+
     @Override
     public void setDefaultRoleName() {
         Iterable<Role> roles = findAll();
